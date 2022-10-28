@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.example.drwebtestapp'
+    compileSdk rootProject.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.example.drwebtestapp"
+        minSdk rootProject.minSdkVersion
+        targetSdk rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.fragment:fragment-ktx:${rootProject.versionFragmentKtx}"
+    implementation "androidx.core:core-ktx:${rootProject.versionCoreKtx}"
+    implementation "androidx.appcompat:appcompat:${rootProject.versionAppCompat}"
+    implementation "com.google.android.material:material:${rootProject.versionAndroidMaterial}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.versionConstraintLayout}"
+
+    testImplementation "junit:junit:${rootProject.versionJunit}"
+    androidTestImplementation "androidx.test.ext:junit:${rootProject.versionExtJunit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.versionEspressoCore}"
+}

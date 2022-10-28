@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="@dimen/dimens_48_dp"
+        android:layout_height="@dimen/dimens_48_dp"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/launch"
+        android:layout_width="@dimen/dimens_48_dp"
+        android:layout_height="@dimen/dimens_48_dp"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:src="@drawable/ic_launch"
+        app:layout_constraintStart_toEndOf="@id/app_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/values_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="122dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/values_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="374dp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_label_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:text="@string/application_label_caption_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        app:layout_constraintStart_toStartOf="@id/values_start"
+        app:layout_constraintTop_toBottomOf="@id/app_icon"
+        tools:text="Phone" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_version_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:text="@string/application_version_caption_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_label" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        app:layout_constraintStart_toStartOf="@id/values_start"
+        app:layout_constraintTop_toBottomOf="@id/app_label"
+        tools:text="Version" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_package_name_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:text="@string/application_package_name_caption_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_version_caption" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_package_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:maxLines="2"
+        android:lines="2"
+        app:layout_constraintStart_toStartOf="@id/values_start"
+        app:layout_constraintEnd_toEndOf="@id/values_end"
+
+        app:layout_constraintTop_toBottomOf="@id/app_version_caption"
+        tools:text="com.example.drwebtestapp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_package_sign_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:text="@string/application_sign_caption_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_package_name_caption" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/app_package_sign"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16_dp"
+        android:layout_marginTop="@dimen/dimens_16_dp"
+        android:maxLines="2"
+        android:lines="2"
+        app:layout_constraintStart_toStartOf="@id/values_start"
+        app:layout_constraintEnd_toEndOf="@id/values_end"
+        app:layout_constraintTop_toBottomOf="@id/app_package_name_caption"
+        tools:text="789 56 13 45 78" />
+</androidx.constraintlayout.widget.ConstraintLayout>
