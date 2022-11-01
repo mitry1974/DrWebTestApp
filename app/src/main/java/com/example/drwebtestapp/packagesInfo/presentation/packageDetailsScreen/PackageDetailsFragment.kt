@@ -62,13 +62,15 @@ class PackageDetailsFragment : Fragment() {
     }
 
     private fun fillUi() {
+        val lib = CalcShaLib()
+        val pm = requireActivity().packageManager
         with(binding) {
-            val lib = CalcShaLib()
-            appIcon.setImageDrawable(requireActivity().packageManager.getApplicationIcon(appInfo.packageName))
+            appIcon.setImageDrawable(pm.getApplicationIcon(appInfo.packageName))
             appLabel.text = appInfo.label
             appPackageName.text = appInfo.packageName
             appVersion.text = appInfo.version
-            appPackageSign.text = lib.calculate(appInfo.packageName)
+            val packageFileName = pm.getApplicationInfo(appInfo.packageName, 0).publicSourceDir
+            appPackageSha1.text = lib.calculate(packageFileName)
         }
     }
 

@@ -2,12 +2,7 @@ package com.example.calcshalib
 
 class CalcShaLib {
 
-    /**
-     * A native method that is implemented by the 'calcshalib' native library,
-     * which is packaged with this application.
-     */
-    external fun stringFromJNI(): String
-    external fun calculate(packageName: String): String
+    external fun calculate(fileName: String): String
 
     companion object {
         // Used to load the 'calcshalib' library on application startup.

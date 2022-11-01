@@ -4,7 +4,7 @@
     <string name="application_label_caption_text">Name: </string>
     <string name="application_version_caption_text">Version:</string>
     <string name="application_package_name_caption_text">Package name:</string>
-    <string name="application_sign_caption_text">Sign:</string>
+    <string name="application_sha1_caption_text">SHA-1</string>
     <string name="package_details_fragment_name">Package details</string>
     <string name="packages_fragment_name">Packages</string>
 </resources>
