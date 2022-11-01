@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import com.example.calcshalib.CalcShaLib
 import com.example.drwebtestapp.R
 import com.example.drwebtestapp.databinding.FragmentPackageDetailsBinding
 import com.example.drwebtestapp.packagesInfo.core.ToolbarActions
@@ -31,7 +32,7 @@ class PackageDetailsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPackageDetailsBinding.inflate(inflater, container, false)
         initToolbar()
         initListeners()
@@ -62,11 +63,12 @@ class PackageDetailsFragment : Fragment() {
 
     private fun fillUi() {
         with(binding) {
+            val lib = CalcShaLib()
             appIcon.setImageDrawable(requireActivity().packageManager.getApplicationIcon(appInfo.packageName))
             appLabel.text = appInfo.label
             appPackageName.text = appInfo.packageName
             appVersion.text = appInfo.version
-            appPackageSign.text = appInfo.signs.joinToString("\n")
+            appPackageSign.text = lib.calculate(appInfo.packageName)
         }
     }
 

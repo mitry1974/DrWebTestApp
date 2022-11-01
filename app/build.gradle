@@ -44,6 +44,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${rootProject.versionAppCompat}"
     implementation "com.google.android.material:material:${rootProject.versionAndroidMaterial}"
     implementation "androidx.constraintlayout:constraintlayout:${rootProject.versionConstraintLayout}"
+    implementation project(path: ':calcshalib')
 
     testImplementation "junit:junit:${rootProject.versionJunit}"
     androidTestImplementation "androidx.test.ext:junit:${rootProject.versionExtJunit}"
